@@ -1,0 +1,19 @@
+context.modules = [
+    {   name = libpipewire-module-loopback
+        args = {
+            audio.position = [ FL FR ]
+            capture.props = {
+                media.class = Audio/Sink
+                node.name = "my_sink"
+                node.description = "my-sink"
+            }
+            playback.props = {
+                node.name = "my_sink"
+		node.description = "my-sink"
+                node.passive = true
+                target.object = "my-default-sink"
+            }
+        }
+    }
+]
+
